@@ -1,0 +1,30 @@
+#include<stdio.h>
+#include<math.h>
+#define PI acos(-1)
+
+int main()
+{
+    int length,test;
+    double width,radius,red,green;
+
+
+    scanf("%d",&test);
+
+    while(test--){
+
+    scanf("%d",&length);
+
+
+   width=(6.0*length)/10.0;
+   radius=(2.0*length)/10.0;
+
+   red=(PI*radius*radius);
+   green=(length*width)-red;
+
+   printf("%0.2lf %0.2lf\n",red,green);
+    }
+   return 0;
+
+
+
+}
