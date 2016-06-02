@@ -1,0 +1,36 @@
+#include<stdio.h>
+
+int main()
+{
+    int size[100],animal[100],env[100];
+    int i,frm,t,total;
+    float div[100],multi[100];
+
+    while(scanf("%d",&t) != EOF){
+
+    while(t--){
+
+    scanf("%d",&frm);
+
+
+
+                 total=0;
+    for(i=0; i<frm; i++){
+
+        scanf("%d %d %d",&size[i],&animal[i],&env[i]);
+
+        div[i]=(float)(size[i])/(float)(animal[i]);
+
+        multi[i]=(div[i]*animal[i]*env[i]);
+
+        total=total+multi[i];
+
+    }
+
+     printf("%d\n",total);
+
+
+    }
+    }
+    return 0;
+}
