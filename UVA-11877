@@ -1,0 +1,31 @@
+#include<stdio.h>
+
+int main()
+{
+    int a,n,j,i;
+
+  while(scanf("%d",&n) != EOF){
+
+      if(n==0){
+
+        break;
+      }
+
+    a=n;
+    j=n;
+
+    while(n>=3){
+
+        a=a+(n/3);
+
+        n=(n/3)+(n%3);
+    }
+
+    if(n==2){
+        a++;
+    }
+
+    printf("%d\n",a-j);
+    }
+    return 0;
+}
