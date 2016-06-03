@@ -1,0 +1,28 @@
+#include<stdio.h>
+#include<math.h>
+#define PI acos(-1)
+
+int main()
+{
+    double radius,size;
+    double sum,sum1;
+
+    while(scanf("%lf %lf",&radius,&size) != EOF){
+
+       if(size<=2.0 || size>=20000.0){
+        break;
+       }
+
+    sum1=(sin(2.0*(PI/size)));
+
+
+    sum=(0.5*size*(radius*radius)*sum1);
+
+    printf("%.3lf\n",sum);
+
+    }
+
+    return 0;
+
+
+}
