@@ -1,0 +1,19 @@
+#include<stdio.h>
+
+int main()
+{
+    int row,col,sum,total;
+
+
+    while(scanf("%d %d",&row,&col) != EOF){
+
+    sum=row*col;
+
+    total=sum-1;
+
+    printf("%d\n",total);
+
+    }
+
+    return 0;
+}
