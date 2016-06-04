@@ -1,0 +1,37 @@
+#include<stdio.h>
+#include<string.h>
+#include<ctype.h>
+
+int arr[100];
+
+int main()
+{
+
+    int k,i,j,l,max=0,t;
+    char a[500];
+
+    scanf("%d",&t);
+
+    for(k=0; k<=t; k++){
+        gets(a);
+        for(j='A'; j<='Z'; j++){
+              for(i=0; a[i] != '\0'; i++){
+                  if(toupper(a[i])==j)
+                    arr[j]++;
+              }
+              if(arr[j]>max){
+                max=arr[j];
+              }
+        }
+    }
+
+         for(l=max; l>0; l--){
+
+            for(j='A'; j<='Z'; j++){
+                if(arr[j]==l)
+                    printf("%d %d\n",j,l);
+            }
+         }
+
+    return 0;
+}
