@@ -1,0 +1,27 @@
+#include<stdio.h>
+
+int main()
+{
+    long int a,b,c,d,t,sum;
+
+   while(scanf("%d",&t) != EOF){
+
+    while(t--){
+    scanf("%ld %ld",&a,&b);
+
+    if(b>a || (a+b)%2 !=0){
+
+        printf("impossible\n");
+    }
+    else{
+
+        c=(a+b)/2;
+        sum=a-c;
+
+        printf("%ld %ld\n",c,sum);
+    }
+   }
+   }
+
+    return 0;
+}
