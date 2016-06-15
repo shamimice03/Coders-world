@@ -1,0 +1,19 @@
+#include<stdio.h>
+#include<string.h>
+
+int main()
+{
+    char mass[80];
+    int i;
+
+    while(scanf("%s",mass)!= EOF){
+
+    for(i=0; mass[i] != '\0'; i++){
+        printf("%c",mass[i]-7);
+    }
+
+     printf("\n");
+    }
+
+    return 0;
+}
