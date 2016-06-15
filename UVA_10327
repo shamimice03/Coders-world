@@ -1,0 +1,31 @@
+#include<stdio.h>
+
+int main()
+{
+    int arr[1050];
+    int i,j,k,l,n,count=0;
+
+      while(scanf("%d",&n) !=EOF){
+
+      for(l=0; l<n; l++){
+
+       scanf("%d",&arr[l]);
+
+      }
+      for(i=0; i<n-1; i++ ){
+
+         for(j=i+1; j<n; j++){
+
+             if(arr[i]>arr[j]){
+                count++;
+             }
+         }
+      }
+
+      printf("Minimum exchange operations : %d\n",count);
+
+  count=0;
+      }
+    return 0;
+}
+
