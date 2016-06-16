@@ -1,0 +1,37 @@
+#include<stdio.h>
+
+int main()
+{
+    long long int a,f;
+    long long int i,j,l,t,m;
+
+  scanf("%lld",&t);
+
+  for(l=1; l<=t; l++){
+
+  scanf("%lld %lld",&a,&f);
+
+for(m=1; m<=f; m++){
+
+ for(j=1; j<=a; j++){
+
+    for(i=1; i<=j; i++){
+            printf("%lld", j);
+          }
+          printf("\n");
+      }
+
+     for(j=a-1; j>=1; j--){
+
+    for(i=1; i<=j; i++){
+            printf("%lld",j);
+          }
+          if(l==t&&m==f&&j==1)
+            break;
+           printf("\n");
+      }
+        printf("\n");
+  }
+  }
+    return 0;
+}
