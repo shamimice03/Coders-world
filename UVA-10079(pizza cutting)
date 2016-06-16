@@ -1,0 +1,22 @@
+#include<stdio.h>
+
+int main()
+{
+    long long int pizza,i,sum=0;
+
+     while(scanf("%lld",&pizza) != EOF){
+          sum=1;
+     if(pizza>=0){
+    for(i=1; i<=pizza; i++){
+
+         sum=sum+i;
+
+    }
+    printf("%lld\n",sum);
+     }
+
+     else
+        break;
+     }
+       return 0;
+}
