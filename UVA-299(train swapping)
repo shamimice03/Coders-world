@@ -1,0 +1,43 @@
+#include<stdio.h>
+
+int main()
+{
+    int arr[1000];
+    int i,j,k,n,temp,count=0,t;
+
+
+   while(scanf("%d",&t) != EOF){
+
+   while(t--){
+       count=0;
+    scanf("%d",&n);
+
+    for(k=0; k<n; k++){
+
+        scanf("%d",&arr[k]);
+    }
+
+     for(i=0; i<n-1; i++){
+
+        for(j=i+1; j<n; j++){
+
+            if(arr[i]>arr[j]){
+                    temp=arr[i];
+                    arr[i]=arr[j];
+                    arr[j]=temp;
+
+                    count++;
+            }
+        }
+     }
+
+
+
+        printf("Optimal train swapping takes %d swaps.\n",count);
+
+        
+
+   }
+   }
+     return 0;
+}
