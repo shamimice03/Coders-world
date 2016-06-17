@@ -1,0 +1,53 @@
+#include<stdio.h>
+
+int main()
+{
+    long long int start,squr=0,j=0,end,i,sum=0,fast=0,last=0,div=10,count=0,k,t;
+
+    scanf("%lld",&t);
+
+    for(k=1; k<=t; k++){
+              printf("case #%d\n",k);
+    scanf("%lld %lld",&start,&end);
+        div=10;
+
+
+    for(i=start; i<=end; i++){
+
+     fast=0;
+     last=0;
+     sum=0;
+     div=10;
+     squr=0;
+
+        squr=i*i;
+
+        for(j=0; squr>=0; j++){
+
+            fast=squr/div;
+            last=squr%div;
+
+           if(last != 0){
+                  sum=fast+last;
+           }
+
+            if(sum==i){
+                printf("%lld\n",i);
+                count=1;
+                break;
+            }
+            div=div*10;
+            if(fast==0){
+                break;
+            }
+        }
+    }
+    if(count==0){
+         printf("no kaprekar numbers\n");
+    }
+    count=0;
+      if((k-1)!=t-1)printf("\n");
+    }
+
+    return 0;
+}
