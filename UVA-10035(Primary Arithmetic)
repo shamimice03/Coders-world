@@ -1,0 +1,57 @@
+#include<stdio.h>
+
+int main()
+{
+    unsigned long long int num1,num2,count=0;
+    int i,j,p1,p2,add=0;
+
+     while(scanf("%llu %llu",&num1,&num2) != EOF){
+
+      if(num1==0 && num2==0){
+        break;
+      }
+
+  while(1){
+        p1=num1%10;
+        p2=num2%10;
+
+        if(((p1+p2)+add)>9){
+
+                count++;
+                add=1;
+        }
+        else{
+            add=0;
+        }
+
+        num1=num1/10;
+        num2=num2/10;
+
+        if(num1==0 && num2==0){
+            break;
+        }
+
+
+  }
+
+    if(count==1){
+
+        printf("%llu carry operation.\n",count);
+    }
+    else if(count>1){
+
+        printf("%llu carry operations.\n",count);
+    }
+    else if(count==0){
+
+         printf("No carry operation.\n");
+    }
+      count=0;
+      p1=0;
+      p2=0;
+      add=0;
+     }
+
+
+   return 0;
+}
