@@ -1,0 +1,53 @@
+#include<stdio.h>
+#include<math.h>
+
+int main()
+{
+    int test,road,i,j,sum=0,min=0,temp=0;
+    int num[40000];
+
+   scanf("%d",&test);
+
+   while(test--){
+
+
+    scanf("%d",&road);
+
+    for(i=0; i<road; i++){
+
+        scanf("%d",&num[i]);
+    }
+
+    for(i=0; i<road-1; i++){
+        for(j=i+1; j<road; j++){
+
+            if(num[i]>num[j]){
+                temp=num[i];
+                num[i]=num[j];
+                num[j]=temp;
+            }
+        }
+    }
+
+
+    for(i=0; i<road; i++){
+            sum=0;
+        for(j=0; j<road; j++){
+
+            sum+=abs(num[j]-num[i]);
+
+        }
+        if(i==0)
+            min=sum;
+        if(sum<min){
+            min=sum;
+        }
+    }
+    printf("%d\n",min);
+
+  min=0;
+  sum=0;
+}
+
+    return 0;
+}
