@@ -1,0 +1,13 @@
+#include<stdio.h>
+
+int main()
+{
+    int n,k,l;
+       l=1;
+    while(scanf("%d",&n) != EOF && n!=0){
+
+        printf("Case %d: %d\n",l,n/2);
+        l++;
+    }
+    return 0;
+}
