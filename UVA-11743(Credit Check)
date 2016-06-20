@@ -1,0 +1,71 @@
+#include<stdio.h>
+#include<string.h>
+
+int main()
+{
+    char a[25],b[25];
+    int num1[10],num2[10];
+    int i=0,j=0,len=0,k=0,p=0,sum1=0,sum2=0,total=0,fast=0,last=0,t;
+
+    scanf("%d%*c",&t);
+
+    while(t--){
+
+    gets(a);
+
+    len=strlen(a);
+
+    while(i != len){
+
+         if(a[i] != ' '){
+
+            b[j++]=a[i];
+
+            }
+            i++;
+    }
+    b[j]=0;
+
+
+
+    len=0;
+    i=0;
+    j=0;
+    len=strlen(b);
+
+
+    k=0;
+    p=1;
+    for(i=0; i<len/2; i++){
+
+        num1[i]=(b[k]-'0')*2;
+        num2[i]=b[p]-'0';
+
+          k+=2;
+          p+=2;
+          sum2+=num2[i];
+
+        fast=num1[i]/10;
+        last=num1[i]%10;
+
+        sum1+=(fast+last);
+
+
+    }
+
+        total+=sum1+sum2;
+
+
+
+     if(total%10==0){
+        printf("Valid\n");
+     }
+     else{
+            printf("Invalid\n");
+     }
+     total=0,sum1=0,sum2=0,i=0,j=0,p=0,len=0,k=0;
+
+}
+    return 0;
+
+}
