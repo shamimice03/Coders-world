@@ -1,0 +1,38 @@
+#include<stdio.h>
+
+int main()
+{
+   int c,n,a[10000],sum=0,i=0,j=0,count=0;
+   float avr=0,div=0,per=100.000,total=0;
+
+     scanf("%d",&c);
+
+     while(c--){
+
+   scanf("%d",&n);
+
+      for(i=0; i<n; i++){
+       scanf("%d",&a[i]);
+        sum+=a[i];
+        }
+
+
+
+       avr= (float)sum/(float)n;
+
+      for(j=0; j<n; j++){
+        if(a[j]>avr){
+            count++;
+        }
+      }
+
+
+      total=((float)count*per)/(float)n;
+
+      printf("%0.3f%%\n",total);
+
+   avr=0,div=0,per=100.000,total=0;
+   sum=0,i=0,j=0,count=0;
+     }
+      return 0;
+}
