@@ -1,0 +1,37 @@
+#include<stdio.h>
+
+int main()
+{
+    long long int a,sum=0,total=0,p=0,num=0;
+
+  while(scanf("%lld",&a)!=EOF){
+
+        if(a==0){
+            break;
+        }
+
+    p=a;
+    sum=0;
+    while(1){
+
+        num=p%10;
+           sum=sum+num;
+               p=p/10;
+
+        total=(sum%10)+sum/10;
+
+        total=total%10+total/10;
+
+        if(total/10==0 && p==0){
+            break;
+        }
+    }
+
+    printf("%lld\n",total);
+   sum=0;
+   total=0;
+   p=0;
+   num=0;
+  }
+    return 0;
+}
