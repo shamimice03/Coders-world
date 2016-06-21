@@ -1,0 +1,44 @@
+#include<stdio.h>
+#include<string.h>
+
+int main()
+{
+    char a[1000000],b[1000000],c[1000000]={'\0'};
+    long int len=0,i=0,j=0,m=0,count=1;
+
+      while(scanf("%s %s",a,b) != EOF){
+
+   len=strlen(b);
+
+   while(len != 0){
+
+          if(a[i] == b[j]){
+                c[m]=b[j];
+              j++;
+              i++;
+              m++;
+      }
+      else{
+      j++;
+      }
+   len--;
+   }
+   c[m]='\0';
+
+ count=strcmp(a,c);
+
+if(count==0){
+    printf("Yes\n");
+}
+else{
+    printf("No\n");
+}
+
+ i=0;
+ m=0;
+ j=0;
+ len=0;
+count=1;
+      }
+        return 0;
+}
