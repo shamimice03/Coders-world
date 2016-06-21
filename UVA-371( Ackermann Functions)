@@ -1,0 +1,49 @@
+#include<stdio.h>
+
+  long long int start,end,a,b,count=0,sum=0,high=0,top=0,i,temp=0;
+
+int main()
+{
+
+
+   while(scanf("%lld %lld",&start,&end)==2 ){
+
+        if(start==0 && end==0){
+            break;
+        }
+        if(start>end){
+            temp=start;
+            start=end;
+            end=temp;
+        }
+
+
+    for(i=start; i<=end; i++){
+
+    a=i;
+    count=0;
+    while(1){
+            count++;
+        if(a%2==0){
+            a=a/2;
+        }
+     else if(a%2 != 0){
+            a=(3*a)+1;
+
+        }
+         if(a==1){
+            break;
+        }
+    }
+
+    if(high<count){
+        high=count;
+        top=i;
+    }
+    a=0;
+    }
+    printf("Between %lld and %lld, %lld generates the longest sequence of %lld values.\n",start,end,top,high);
+    count=0,sum=0,high=0,top=0,temp=0;
+   }
+    return 0;
+}
