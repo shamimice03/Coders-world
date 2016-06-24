@@ -1,0 +1,98 @@
+#include<stdio.h>
+#include<string.h>
+#include<ctype.h>
+
+int main()
+{
+    char a[100],s[100];
+    int i,j,k,count=0,sum=0,num1=0,num2=0,c=0,b=0;
+    float love;
+
+
+        while(gets(a)){
+            gets(s);
+    for(i='A'; i<='Z';i++){
+           count++;
+
+        for(j=0; a[j] != '\0'; j++){
+
+            if(toupper(a[j])==i){
+
+                sum=sum+count;
+
+            }
+        }
+
+    }
+    num1=sum;
+     sum=0;
+     count=0;
+     i=0;
+     j=0;
+
+    for(i='A'; i<='Z';i++){
+           count++;
+
+        for(j=0; s[j] != '\0'; j++){
+
+            if(toupper(s[j])==i){
+
+                sum=sum+count;
+
+            }
+        }
+
+    }
+
+  num2=sum;
+
+
+
+  while(1){
+
+   if(num1/10==0){
+    break;
+   }
+    c=num1%10;
+    b=num1/10;
+
+   num1=num1/10;
+
+   num1=c+b;
+
+
+  }
+
+
+
+    while(1){
+
+   if(num2/10==0){
+    break;
+   }
+    c=num2%10;
+    b=num2/10;
+
+   num2=num2/10;
+
+   num2=c+b;
+
+
+  }
+
+
+if(num2<num1){
+   love=(((float)(num2)/(float)(num1))*100.00);
+}
+else{
+    love=(((float)(num1)/(float)(num2))*100.00);
+}
+printf("%0.2f %%\n",love);
+love=0;
+i=0,j=0,count=0,sum=0,num1=0,num2=0,c=0,b=0;
+
+        }
+return 0;
+
+}
+
