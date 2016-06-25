@@ -1,0 +1,56 @@
+//shamimice03
+//uva-1237
+
+#include<stdio.h>
+#include<string.h>
+
+int main()
+{
+    char data[10000][30];
+    long int low[10000],high[10000],q,count=0,dlen,qlen,i,t,j,k,test;
+
+
+    scanf("%ld",&test);
+
+    for(t=1; t<=test; t++){
+
+    scanf("%ld",&dlen);
+
+    for(i=0; i<dlen; i++){
+        scanf("%s %ld %ld",data[i],&low[i],&high[i]);
+    }
+
+    scanf("%ld",&qlen);
+
+    for(i=0; i<qlen; i++){
+
+        scanf("%ld",&q);
+
+        count=0;
+
+        for(j=0; j<dlen; j++){
+
+            if(q>=low[j] && q<=high[j]){
+                count++;
+
+                if(count>1){
+                    break;
+                }
+                k=j;
+            }
+        }
+
+        if(count==1){
+            printf("%s\n",data[k]);
+        }
+        else{
+            printf("UNDETERMINED\n");
+        }
+    }
+    if(test != t){
+        printf("\n");
+    }
+}
+    return 0;
+}
+@end of source code
