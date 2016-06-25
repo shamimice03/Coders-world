@@ -1,0 +1,56 @@
+///UVA-10591(Happy number)
+///shamimice03@gamil.com
+
+#include<stdio.h>
+
+    long long int n,a,i,sum=0,count=0,fast=0,p;
+int main()
+{
+
+
+
+    scanf("%lld",&n);
+
+    for(i=1; i<=n; i++){
+
+            scanf("%lld",&a);
+            p=a;
+
+    while(1){
+       while(1){
+
+        fast=a%10;
+
+        sum+=(fast*fast);
+
+        if(a==0){
+            break;
+        }
+        a=a/10;
+       }
+
+        if(sum==1){
+                break;
+            }
+        else if(sum==4){
+                count++;
+            break;
+        }
+
+             a=sum;
+             sum=0;
+          }
+
+     if(count==0){
+        printf("Case #%lld: %lld is a Happy number.\n",i,p);
+     }
+     else{
+        printf("Case #%lld: %lld is an Unhappy number.\n",i,p);
+     }
+
+count=0,sum=0;
+    }
+    return 0;
+}
+
+///End of source code
