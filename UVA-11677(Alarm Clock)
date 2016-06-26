@@ -1,0 +1,68 @@
+///UVA-11677(Alarm Clock)
+///shamimice03@gmail.com
+
+#include<stdio.h>
+
+int main()
+{
+    int H1,H2,M1,M2,i,j,k,sum,min,total;
+
+
+    while(scanf("%d %d %d %d",&H1,&M1,&H2,&M2)!=EOF){
+
+
+    if(H1==0 && M1==0 && H2==0 && M2==0){
+        break;
+    }
+
+
+      if(H1==0){
+        H1==24;
+      }
+      else if(H2==0){
+            H2=24;
+        }
+
+
+
+    if(H1<H2){
+
+
+        sum=(H2-H1)*60-M1;
+
+        total=sum+M2;
+     printf("%d\n",total);
+    }
+
+
+   else if(H1==H2){
+
+     if(M1>M2){
+     total=(24*60)-M1+M2;
+     }
+      else if (M1<M2){
+     total=M2-M1;
+   }
+   else{
+    total=24*60;
+   }
+ printf("%d\n",total);
+   }
+
+   else if(H1>H2){
+
+        H1=24-H1;
+
+         sum=((H1+H2)*60);
+
+         total=sum-M1+M2;
+
+      printf("%d\n",total);
+   }
+
+   total=0,sum=0;
+    }
+    return 0;
+}
+
+///End of source code
