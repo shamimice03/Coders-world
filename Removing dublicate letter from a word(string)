@@ -1,0 +1,29 @@
+#include<stdio.h>
+#include<string.h>
+
+int main()
+{
+    char word[1000],convert[10000]={0};
+    int i,j,m,len,count=0;
+
+    gets(word);
+
+    len=strlen(word);
+    m=0;
+    for(i=0; i<len; i++){
+        for(j=0; j<len; j++){
+
+            if(word[i]==convert[j]){
+                count=1;
+            }
+        }
+        if(count==0){
+            convert[m++]=word[i];
+        }
+        count=0;
+    }
+    convert[m]='\0';
+    puts(convert);
+    
+return 0;
+}
