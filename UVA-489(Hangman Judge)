@@ -1,0 +1,107 @@
+///UVA-489(Hangman Judge)
+///shamimice03@gmail.com
+///Uhunt-shamim.ict.03
+///NSTU
+
+#include<stdio.h>
+#include<string.h>
+
+int main()
+{
+    char a[100000],guess[1000000];
+    int count=0,i,j,len,len1,k,blen,glen,win=0,m=0,lose=0,t,hope=0,now=0;
+
+   while(scanf("%d%*c",&t) == 1 && t != -1){
+
+char b[100000]={0};
+char c[100000]={0};
+
+     gets(a);
+
+    gets(guess);
+
+    printf("Round %d\n",t);
+
+    len=0;
+    len=strlen(a);
+
+     k=0;
+/*Want to convert in a word,where one letter will be once,such as-Book,converted-Bok*/
+
+    for(i=0; i<len; i++){
+        for(j=0; j<len; j++){
+             if(a[i]==b[j]){
+                count=1;
+             }
+        }
+        if(count==0){
+            b[k++]=a[i];
+        }
+        count=0;
+    }
+
+
+  blen=0;
+   blen=strlen(b);
+  i=0,j=0,count=0;
+
+    len1=0;
+    len1=strlen(guess);
+    /*Want to convert in a word,where one letter will be once,such as-Book,converted-Bok*/
+   m=0;
+       for(i=0; i<len1; i++){
+        for(j=0; j<len1; j++){
+             if(guess[i]==c[j]){
+                count=1;
+             }
+        }
+        if(count==0){
+            c[m++]=guess[i];
+        }
+        count=0;
+    }
+
+
+
+    glen=0;
+    glen=strlen(c);
+
+
+   i=0,j=0;
+   for(i=0; i<glen; i++){
+      for(j=0; j<blen; j++){
+
+        if(b[j]==c[i]){
+             win++;
+            hope=1;
+            break;
+        }
+
+      }
+      if(hope==0){
+        now++;
+        if((now==7) && win != blen){
+            printf("You lose.\n");
+            lose=1;
+            break;
+
+      }
+      }
+
+      hope=0;
+   }
+
+   if(win==blen){
+    printf("You win.\n");
+   }
+   else if((blen != win) && (glen-win)<7 && lose==0){
+       printf("You chickened out.\n");
+   }
+
+win=0,count=0,hope=0,now=0,lose=0;
+
+    }
+    return 0;
+}
+
+///End of source code
