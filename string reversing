@@ -1,0 +1,29 @@
+
+///*string reversing*///
+
+#include<stdio.h>
+#include<string.h>
+
+int main()
+{
+  char text[100],rev[100];
+    int i,j,k,len;
+
+    gets(text);
+
+    len=0;
+    k=strlen(text)-1;
+    len=k;
+
+    for(i=0; i<=len; i++){
+
+        rev[i]=text[k];
+        k--;
+    }
+    rev[i]='\0';
+
+    puts(rev);
+
+    return 0;
+}
+@end of code
