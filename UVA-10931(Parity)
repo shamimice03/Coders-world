@@ -1,0 +1,48 @@
+///@UVA-10931(Parity)
+///Shamim.ict.03(uhunt)
+///NSTU
+#include<stdio.h>
+#include<string.h>
+
+int main()
+{
+    char bin[1000000]={0},temp,c[100000]={0};
+    long long int b,a,i,j,len=0,count=0,m=0;
+
+
+    while(scanf("%lld",&a) !=0 && a!=0){
+
+    i=0;
+    while(a>0){
+
+        b=a%2;
+
+        bin[i++]=b+48;
+        if(b==1){
+            count++;
+        }
+       a=a/2;
+    }
+  bin[i]='\0';
+
+   len=0;
+  len=strlen(bin)-1;
+  m=len;
+
+  for(j=0; j<=m; j++){
+
+     c[j]=bin[len];
+     len--;
+  }
+c[j]='\0';
+  printf("The parity of %s is %lld (mod 2).\n",c,count);
+
+  count=0;
+  temp=0;
+  m=0;
+  len=0;
+
+    }
+    return 0;
+}
+///@End of source code.
