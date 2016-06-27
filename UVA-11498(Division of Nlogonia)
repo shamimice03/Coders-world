@@ -1,0 +1,40 @@
+///UVA-11498(Division of Nlogonia)
+///shamimice03@gmail.com
+///Uhunt-shamim.ict.03
+///NSTU
+
+#include<stdio.h>
+
+int main()
+{
+    int K,M,N,X,Y,count=0,i,j,sum=0;
+
+
+   while(scanf("%d",&K) !=EOF && K!=0 ){
+
+   scanf("%d %d",&M,&N);
+
+    for(i=1; i<=K; i++){
+
+        scanf("%d %d",&X,&Y);
+
+        if(X==M || Y==N){
+            printf("divisa\n");
+        }
+        else if(X>M && Y>N){
+            printf("NE\n");
+        }
+        else if(X<M && Y<N){
+            printf("SO\n");
+        }
+        else if(X<M && Y>N){
+            printf("NO\n");
+        }
+        else if(X>M && Y<N){
+            printf("SE\n");
+        }
+    }
+   }
+    return 0;
+}
+///End of source code.
