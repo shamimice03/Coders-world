@@ -1,0 +1,45 @@
+#include<stdio.h>
+#include<string.h>
+#include<ctype.h>
+
+int main()
+{
+    char text[1000],fr[100];
+    int lineup[26];
+    int i,j,k,m,max=0,len;
+
+
+    gets(text);
+
+    len=0;
+    len=strlen(text);
+
+
+    /*try to make letters ranking NULL,for next step*/
+
+    for(i=0; i<26; i++){
+        lineup[i]=0;
+    }
+    /*now ranking of all letter from a-z is null :) */
+
+
+    /* now we make letter ranking for a text...such as how many time a letter exist in a text*/
+
+    for(i='a'; i<='z'; i++){
+        for(j=0; j<len; j++){
+
+             if(tolower(text[j])==i){
+                lineup[i-'a']++;
+             }
+        }
+    }
+
+    for(i=0; i<26; i++){
+            if(lineup[i] != 0)
+        printf("%c %d\n",i+'a',lineup[i]);
+    }
+
+
+    return 0;
+
+}
