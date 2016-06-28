@@ -1,0 +1,49 @@
+
+
+#include<stdio.h>
+#include<string.h>
+#include<ctype.h>
+
+int main()
+{
+    char text[1000];
+    int asci[130];
+    int letter,i,j,len,max=0;
+
+
+    while(gets(text)){
+
+        len=0;
+        len=strlen(text);
+
+        for(i=0; i<130; i++){
+             asci[i]=0;
+        }
+        max=0;
+        for(i=0; i<len; i++){
+
+            if(isalpha(text[i])){
+                letter=text[i];
+                for(j=0; j<130; j++){
+                    if(letter==j){
+                        asci[j]++;
+                        break;
+                    }
+                }
+                if(asci[j]>max){
+                    max=asci[j];
+                }
+            }
+        }
+
+        for(i=0; i<130; i++){
+            if(max==asci[i]){
+                printf("%c",i);
+            }
+        }
+        printf(" %d\n",max);
+
+    }
+
+    return 0;
+}
