@@ -1,0 +1,35 @@
+///Uva-374(big mod)
+///shamimice03@gmail.com
+
+#include<stdio.h>
+
+    int big_mod(long int base,long int power,long int mod){
+
+          if(power==0)
+              return 1;
+          else if(power%2==0){
+
+              int s1=(big_mod(base,power/2,mod))%mod;
+              return (s1*s1)%mod;
+          }
+          else if(power%2==1){
+
+              int s1=base%mod;
+              int s2=(big_mod(base,power-1,mod)%mod);
+
+              return (s1*s2)%mod;
+          }
+
+       }
+
+int main()
+{
+    long int base,power,mod;
+
+    while(scanf("%ld %ld %ld",&base,&power,&mod)==3){
+
+    printf("%ld\n",big_mod(base,power,mod));
+
+    }
+    return 0;
+}
