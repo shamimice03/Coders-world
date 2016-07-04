@@ -1,0 +1,45 @@
+#include<stdio.h>
+#include<string.h>
+
+int main()
+{
+    char text[1000];
+    int i,j,k,temp,m=1,asci[1000];
+
+
+    while(gets(text)){
+
+    for(i=0; i<130; i++){
+
+         asci[i]=0;
+    }
+
+    for(i=0; text[i] !='\0'; i++){
+
+        temp=text[i];
+
+        for(j=0; j<130; j++){
+            if(temp==j){
+                asci[j]++;
+                break;
+            }
+        }
+    }
+
+    if(m!=1){
+        printf("\n");
+    }
+    k=1;
+
+    for(i=0; text[i]!='\0'; i++){
+        for(j=130; j>=0; j--){
+            if(k==asci[j]){
+                printf("%d %d\n",j,asci[j]);
+            }
+        }
+        k++;
+    }
+    m=0;
+}
+return 0;
+}
