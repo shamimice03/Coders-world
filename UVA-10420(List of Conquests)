@@ -1,0 +1,55 @@
+#include<stdio.h>
+#include<string.h>
+
+int main()
+{
+        int i,j,k,l,m,n;
+    char country[2001][85],hudai[100],temp[100];
+
+
+
+    scanf("%d",&n);
+
+    int count[2001]={0};
+
+    for(i=0; i<n; i++){
+
+        scanf("%s",country[i]);
+        gets(hudai);
+    }
+
+    for(i=0; i<n; i++)
+        for(j=i+1; j<n; j++)
+            if(strcmp(country[i],country[j])==0){
+                count[i]++;
+
+                country[j][0]='\0';
+            }
+
+      for(i=0; i<n-1; i++){
+        for(j=i+1; j<n; j++){
+
+            if(country[j][0]=='\0')
+                continue;
+            if(strcmp(country[i],country[j])>0){
+
+                strcpy(temp,country[i]);
+                strcpy(country[i],country[j]);
+                strcpy(country[j],temp);
+
+                k=count[i];
+                count[i]=count[j];
+                count[j]=k;
+            }
+        }
+      }
+
+      for(i=0; i<n; i++){
+
+           if(country[i][0] !='\0')
+        printf("%s %d\n",country[i],count[i]+1);
+
+      }
+
+      return 0;
+}
