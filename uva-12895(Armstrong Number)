@@ -1,0 +1,47 @@
+#include<stdio.h>
+#include<math.h>
+
+int main()
+{
+    long long int a,len,i,count,num,total,test,p;
+    float k,j,sum;
+
+    scanf("%lld",&test);
+for(p=0; p<test; p++){
+
+    scanf("%lld",&a);
+
+    num=a;
+    i=a;
+
+    j=0;
+
+    while(a>0){
+
+        a=a/10;
+        j++;
+    }
+
+      total=0;
+    sum=0;
+    while(num>0){
+
+          k=num%10;
+
+          i = i -  pow(k,j);
+
+          num=num/10;
+    }
+
+
+    if(i==0){
+        printf("Armstrong\n");
+    }
+    else{
+       printf("Not Armstrong\n");
+    }
+
+}
+    return 0;
+}
+
