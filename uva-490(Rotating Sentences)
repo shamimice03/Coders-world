@@ -1,0 +1,41 @@
+#include<stdio.h>
+#include<string.h>
+
+int main()
+{
+   char text[101][101];
+   int i,j,k,l,high=0,len,p=0;
+
+   for(i=0; i<101; i++)
+   for(j=0; j<101; j++){
+
+       text[i][j]=' ';
+   }
+
+   while(gets(text[p]))
+        p++;
+
+
+   for(i=0; i<p; i++){
+
+       len=strlen(text[i]);
+
+       if(len>high)
+          high=len;
+
+       text[i][len]=' ';
+
+   }
+
+   for(i=0; i<high; i++){
+
+      for(j=p-1; j>=0; j--){
+
+          printf("%c",text[j][i]);
+      }
+      printf("\n");
+   }
+
+
+    return 0;
+}
