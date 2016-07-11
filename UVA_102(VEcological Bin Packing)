@@ -1,0 +1,50 @@
+#include<stdio.h>
+
+int main()
+{
+    long long int bol[10],task[10],temp=0,low=0,count=0;
+    long long int i,j,k,l,m;
+
+  while(scanf("%lld\n",&bol[1]) != EOF){
+    for(i=2; i<=9; i++){
+    scanf("%lld",&bol[i]);
+
+    }
+
+
+        task[0]=bol[2]+bol[3]+bol[4]+bol[5]+bol[7]+bol[9];
+        task[1]=bol[2]+bol[3]+bol[4]+bol[6]+bol[7]+bol[8];
+        task[2]=bol[1]+bol[2]+bol[5]+bol[6]+bol[7]+bol[9];
+        task[3]=bol[1]+bol[2]+bol[4]+bol[6]+bol[8]+bol[9];
+        task[4]=bol[1]+bol[3]+bol[5]+bol[6]+bol[7]+bol[8];
+        task[5]=bol[1]+bol[3]+bol[4]+bol[5]+bol[8]+bol[9];
+
+
+     low=task[0];
+     count=0;
+     for(j=0; j<6; j++){
+
+        if(task[j]<low){
+            count=j;
+            low=task[j];
+        }
+     }
+
+           if(count==0)
+        printf("BCG %lld\n",low);
+           else if(count==1)
+        printf("BGC %lld\n",low);
+           else if(count==2)
+        printf("CBG %lld\n",low);
+           else if(count==3)
+        printf("CGB %lld\n",low);
+           else if(count==4)
+        printf("GBC %lld\n",low);
+           else if(count==5)
+        printf("GCB %lld\n",low);
+
+  }
+
+    return 0;
+
+}
