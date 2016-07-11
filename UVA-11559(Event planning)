@@ -1,0 +1,65 @@
+///shamimice03@gmail.com
+
+#include<stdio.h>
+int main()
+
+
+{
+    int mem,bud,hot,week,low;
+    int i,j,p,count=0,hobe=0;
+    int taka[100],sit[1001],total[1000];
+
+    while(scanf("%d %d %d %d",&mem,&bud,&hot,&week) != EOF){
+    p=0;
+    for(i=0; i<hot; i++){
+
+          scanf("%d",&taka[i]);
+
+    count=0;
+          for(j=0; j<week; j++){
+            scanf("%d",&sit[i]);
+
+            if(sit[i]>=mem){
+                count=1;
+            }
+          }
+
+
+          if(count==1){
+            total[p++]=(taka[i]*mem);
+              count=0;
+          }
+          else{
+            count=0;
+          }
+
+    }
+    hobe=0;
+    for(i=0; i<p; i++){
+        if(bud>=total[i]){
+      hobe=1;
+      break;
+        }
+        else{
+            hobe=0;
+        }
+   }
+   if(hobe==1){
+
+   low=bud;
+   for(i=0; i<p; i++){
+
+        if(low>total[i]){
+            low=total[i];
+        }
+   }
+   printf("%d\n",low);
+   }
+   else{
+    printf("stay home\n");
+   }
+  low=0;
+    }
+   return 0;
+}
+
