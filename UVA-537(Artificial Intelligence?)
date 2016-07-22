@@ -1,0 +1,62 @@
+#include<stdio.h>
+
+
+int main()
+{
+    char text;
+    int i,j,k,l,coc=0,test;
+    double I,U,P,m;
+
+    scanf("%d%*c",&test);
+
+    for(i=1; i<=test; i++){
+      coc=0;
+      P=0;
+      I=0;
+      U=0;
+    while((text=getchar())!='\n'){
+
+      if(text=='='){
+         scanf("%lf",&m);
+         coc=1;
+         continue;
+      }
+if(coc==1){
+    if(text=='m')
+        m/=1000;
+
+    else if(text=='M')
+       m*=1000000;
+
+    else if(text=='k')
+        m*=1000;
+    else if(text=='W')
+        P=m;
+    else if(text=='A')
+        I=m;
+    else if(text=='V')
+        U=m;
+}
+  if(text=='W' || text=='V' || text=='A'){
+    coc=0;
+  }
+
+}
+
+    printf("Problem #%d\n",i);
+
+      if(U>0 && I>0){
+        printf("P=%0.2lfW\n\n",U*I);
+      }
+      else if(P>0 && I>0){
+        printf("U=%0.2lfV\n\n",P/I);
+      }
+     else if(P>0 && U>0){
+        printf("I=%0.2lfA\n\n",P/U);
+      }
+
+
+    }
+      return 0;
+
+}
