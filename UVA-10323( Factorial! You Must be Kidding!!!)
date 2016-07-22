@@ -1,0 +1,44 @@
+#include<stdio.h>
+
+long long int fact( int a){
+
+      if(a==0)
+        return 1;
+     else
+      return (a*fact(a-1));
+
+   }
+
+int main()
+{
+    long long int n,ans,i,test,j;
+
+
+   while(scanf("%lld",&n)!=EOF){
+
+
+    if(n<0){
+
+        if(n%2==0)
+        printf("Underflow!\n");
+        else if(n%2 !=0 )
+        printf("Overflow!\n");
+
+    }
+    else if(n>=0&&n<8){
+
+        printf("Underflow!\n");
+    }
+     else if(n>13){
+    printf("Overflow!\n");
+   }
+
+   else{
+    ans=fact(n);
+    printf("%lld\n",ans);
+    }
+
+
+   }
+    return 0;
+}
