@@ -1,0 +1,62 @@
+#include<stdio.h>
+#include<math.h>
+#define N 1000000
+
+int number[N];
+
+int prime( )
+
+{
+    int i,j,sq;
+
+    sq=sqrt(N);
+
+    for(i=4; i<=N; i+=2){
+        number[i]=1;
+    }
+    for(i=3; i<=sq; i+=2){
+
+        if(number[i]==0){
+            for(j=i*i; j<=N; j+=i)
+                number[j]=1;
+        }
+    }
+    number[1]=1;
+}
+
+  int main()
+  {
+      prime( );
+    int i,a,x,y,pk=0;
+
+     while(scanf("%d",&a) !=EOF){
+
+     pk=0;
+
+     if(a==0){
+        break;
+     }
+
+     for(i=2; i<a; i++){
+
+       if(number[i]==0){
+           x=a-i;
+            if(number[x]==0){
+                y=i;
+                pk=1;
+                break;
+            }
+       }
+
+     }
+
+     if(pk==1)
+         printf("%d = %d + %d\n",a,y,x);
+
+     else
+        printf("Goldbach's conjecture is wrong.\n");
+
+     }
+    return 0;
+}
+
