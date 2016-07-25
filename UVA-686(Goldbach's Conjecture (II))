@@ -1,0 +1,60 @@
+#include<stdio.h>
+#include<math.h>
+#define N 1000000
+
+ int num[N];
+
+int prime( )
+{
+    int i,j,sq;
+
+    sq=sqrt(N);
+
+    for(i=4; i<=N; i+=2){
+        num[i]=1;
+    }
+
+    for(i=3; i<=sq; i+=2){
+
+         if(num[i]==0){
+            for(j=i*i; j<=N; j+=i){
+                num[j]=1;
+            }
+         }
+    }
+   num[1]=1;
+
+}
+int main()
+{
+    prime( );
+    int a,i,j,x=0,y=0;
+    int count=0;
+
+    while(scanf("%d",&a)==1){
+
+    if(a==0)
+        break;
+
+    for(i=2; i<a; i++){
+
+          if(num[i]==0){
+
+             x=a-i;
+
+             if(num[x]==0){
+                y=i;
+                if(x+y==a && x<=y)
+                count++;
+
+             }
+          }
+    }
+
+
+    printf("%d\n",count);
+    count=0;
+    }
+    return 0;
+}
+
