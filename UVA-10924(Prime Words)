@@ -1,0 +1,73 @@
+#include<stdio.h>
+#include<string.h>
+#include<math.h>
+#define N 1000000
+
+int num[N];
+
+int prime( )
+{
+    int i,j,sq;
+
+    sq=sqrt(N);
+
+    for(i=4; i<=N; i+=2)
+        num[i]=1;
+
+    for(i=3; i<=sq; i+=2){
+        if(num[i]==0){
+            for(j=i*i; j<=N; j+=i)
+                num[j]=1;
+        }
+    }
+}
+
+int main()
+{
+    prime( );
+    char w;
+    int i,j,count=0,number,total=0;
+    int p;
+    int check=0;
+
+    while((w=getchar())!=EOF){
+
+
+    number = 0;
+    count=0;
+    if(w>='a'){
+    for(i='a'; i<='z'; i++){
+        count++;
+        if(i==w)
+        number=count;
+      }
+    }
+    else{
+         for(i='A'; i<='Z'; i++){
+        count++;
+        if(i==w)
+        number=count+26;
+    }
+    }
+
+    total+=number;
+
+    if(w=='\n'){
+    check=0;
+
+    if(num[total]==0)
+        check=1;
+
+   if(check==1){
+    printf("It is a prime word.\n");
+   }
+   else{
+    printf("It is not a prime word.\n");
+
+   }
+   total=0,check=0;
+    }
+    }
+
+return 0;
+}
