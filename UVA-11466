@@ -1,0 +1,32 @@
+#include<stdio.h>
+
+int main()
+{
+    long long int num,i,j,count,per=0;
+
+    while(scanf("%lld",&num) && num){
+        int count=0;
+          if(num<0)
+            num=(-1*num);
+
+        for(i=2; i*i<=num; i++){
+            if(num%i==0){
+                    count++;
+                while(num%i==0){
+                         per=num;
+                      num=num/i;
+                }
+            }
+        }
+        if(num==1 && count>1)
+            printf("%lld\n",per);
+        else if(num !=1 && count>0)
+            printf("%lld\n",num);
+        else{
+            printf("-1\n");
+        }
+        per=0;
+    }
+
+   return 0;
+}
