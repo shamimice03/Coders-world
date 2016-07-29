@@ -1,0 +1,36 @@
+#include<stdio.h>
+
+int main()
+{
+    int cu_date,cu_month,cu_year,br_date,br_month,br_year;
+    int total=0,test,i;
+    char ch;
+
+    scanf("%d",&test);
+   for(i=1; i<=test; i++){
+
+   scanf("%d %c %d %c %d",&cu_date,&ch,&cu_month,&ch,&cu_year);
+     scanf("%d%c%d%c%d",&br_date,&ch,&br_month,&ch,&br_year);
+
+
+      total=0;
+      printf("Case #%d: ",i);
+
+
+       total=cu_year-br_year;
+
+       if(cu_month<br_month)
+            total--;
+       else if(cu_month==br_month)
+            if(cu_date<br_date)
+               total--;
+       if(total<0)
+         printf("Invalid birth date\n");
+        else if(total>130)
+          printf("Check birth date\n");
+         else
+         printf("%d\n",total);
+
+     }
+   return 0;
+}
