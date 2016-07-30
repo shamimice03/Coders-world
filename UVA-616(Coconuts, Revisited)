@@ -1,0 +1,45 @@
+#include<stdio.h>
+#include<math.h>
+
+
+int main()
+{
+    int a,i,j,ans=0,b,count=0,len=0,total;
+
+    while(scanf("%d",&a)){
+
+   if(0>a)
+    break;
+
+    count=0;
+    total=0;
+   len=0;
+    len=sqrt(a)+1;
+
+    for(i=len; i>=2; i--)
+    {
+        ans=a;
+
+        for(j=0; j<=i && ans%i==1; j++){
+
+                ans-=(ans/i)+1;
+        }
+        if(ans%i==0 && i==j){
+            count=1;
+            break;
+        }
+    }
+
+    if(count)
+        printf("%d coconuts, %d people and 1 monkey\n",a,i);
+    else
+        printf("%d coconuts, no solution\n",a);
+
+
+
+
+    }
+
+return 0;
+}
+
