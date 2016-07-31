@@ -1,0 +1,31 @@
+#include<stdio.h>
+
+int main()
+{
+    int n,count=0,i,j,total;
+    j=1;
+    while(scanf("%d",&n)){
+
+            if(n<0)
+            break;
+            if(n==1){
+                 printf("Case %d: %d\n",j,count);
+                 j++;
+                 continue;
+            }
+
+   total=1;
+    for(i=1; ; i++)
+    {
+        total=total*2;
+        count++;
+        if(total>=n)
+            break;
+    }
+
+    printf("Case %d: %d\n",j,count);
+    count=0;
+    j++;
+    }
+    return 0;
+}
