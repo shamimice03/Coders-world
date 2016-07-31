@@ -1,0 +1,39 @@
+#include<stdio.h>
+
+
+int main()
+{
+    int a,p,q,count=0,i,mini=0,temp=0,m,n;
+
+
+    while(scanf("%d %d",&p,&q)==2){
+
+       mini=0;
+      printf("%d %d ",p,q);
+       if(p>q){
+          temp=p;
+           p=q;
+           q=temp;
+       }
+
+      for(i=p; i<=q; i++){
+
+           count=1;
+           a=i;
+      while(a >  1){
+       if(a%2==0)
+       a=a/2;
+       else
+       a=(3*a)+1;
+
+        count++;
+      }
+      if(mini<=count)
+        mini=count;
+
+      }
+            printf("%d\n",mini);
+    }
+    return 0;
+}
+
