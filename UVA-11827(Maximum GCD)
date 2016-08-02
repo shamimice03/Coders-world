@@ -1,0 +1,101 @@
+/*
+
+Algorithm : GCD type.
+Details   : Finding maximum GCD.
+UVA       : 11827.
+
+*/
+
+
+
+#include<stdio.h>
+#include<string.h>
+#include<math.h>
+
+/* GCD part */
+
+int gcd(int a,int b){
+   int temp;
+   if(a==0) return b;
+   if(b==0) return a;
+   if(a<b){
+    temp=a;
+    a=b;
+    b=temp;
+   }
+   int r=a%b;
+
+   return gcd(b,r);
+
+}
+
+int main()
+{
+    char line[1000];
+    int num[1050],i,j,a,k,g,mini=0,test,len,total,m;
+    double n;
+
+
+    scanf("%d%*c",&test);
+
+
+
+    while(test--){
+    i=0;
+
+   gets(line);
+
+   m=0;
+   len=0;
+   len=strlen(line);
+
+   /* FInding number from a string line */
+
+   for(i=len-1; i>=0; i--){
+
+       total=0;
+       k=0;
+
+       while(line[i] !=' ' && i>=0){
+
+        n=pow(10,k);
+
+        total+=(n*(line[i]-48));
+
+
+        i--;
+        k++;
+       }
+
+       if(total>0){
+        num[m++]=total;
+       }
+   }
+
+
+    mini=0;
+    g=0;
+
+    /* Now,Finding maximum GCD */
+
+        for(i=0; i<m; i++){
+           for(j=i+1; j<m; j++){
+         g=gcd(num[i],num[j]);
+
+         if(mini<g){
+            mini=g;
+         }
+
+         g=0;
+      }
+
+        }
+
+ printf("%d\n",mini);
+
+    }
+
+    return 0;
+}
+
+/* END oF SoUrCe CoDe.*/
