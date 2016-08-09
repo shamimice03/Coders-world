@@ -1,0 +1,66 @@
+#include<stdio.h>
+#include<math.h>
+#define N 100000000
+
+long long int number[N];
+
+int prime( )
+
+{
+    long long int i,j,sq;
+
+    sq=sqrt(N);
+
+    for(i=4; i<=N; i+=2){
+        number[i]=1;
+    }
+    for(i=3; i<=sq; i+=2){
+            for(j=i*i; j<=N; j+=i)
+                number[j]=1;
+    }
+    number[1]=1;
+}
+
+  int main()
+  {
+      prime( );
+    unsigned long long int i,a,x,y,pk=0;
+
+     while(scanf("%llu",&a) ==1){
+
+
+       if(a==1)
+            printf("%llu is not the sum of two primes!\n",a);
+
+      else if(a%2==1){
+           if(number[a-2] == 0)
+               printf("%llu is the sum of 2 and %llu.\n",a,a-2);
+           else
+              printf("%llu is not the sum of two primes!\n",a);
+
+      }
+
+      else{
+        x=0;
+        y=0;
+
+        for(i=a/2; i<a; i++){
+
+            if(number[(a/2)-x]==0 && number[i]==0 &&((a/2)-x)!=i){
+                y=1;
+                printf("%llu is the sum of %llu and %llu.\n",a,a-i,i);
+                break;
+            }
+            x++;
+        }
+        if(y==0)
+        printf("%llu is not the sum of two primes!\n",a);
+
+      }
+
+
+  }
+    return 0;
+}
+
+
