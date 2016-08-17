@@ -1,0 +1,53 @@
+#include<stdio.h>
+#include<string.h>
+
+int main()
+{
+    char line[150],left[150];
+    int i,j,ck=0,len=0,t;
+
+    scanf("%d",&t);
+    getchar();
+
+    while(t--){
+    gets(line);
+
+    ck=0;
+    len=0;
+    len=strlen(line);
+    j=-1;
+    for(i=0; i<len; i++){
+
+            if(line[i]==' ')
+            {
+                ck=0;
+                break;
+            }
+
+         if(line[i]=='(' || line[i]=='['){
+             left[j]=line[i];
+             j++;
+         }
+         else if( (line[i]==']' && left[j-1]=='[') || (line[i]==')' && left[j-1]=='(') )
+          left[--j]=='\0';
+         else{
+            ck=1;
+            break;
+         }
+    }
+
+
+    if(j!=-1)
+        printf("No\n");
+    else if(ck==0)
+        printf("Yes\n");
+    else
+       printf("No\n");
+
+
+    }
+
+    return 0;
+
+}
+
