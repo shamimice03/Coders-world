@@ -1,0 +1,50 @@
+#include<stdio.h>
+#include<math.h>
+
+
+int power(int n,int pow,int i)
+{
+    int count=0;
+     printf("Function %d pow: %d %d\n",n,pow,i);
+
+        while(n>1){
+            count+=n/i;
+            n/=i;
+          }
+
+    return  count;
+}
+
+int main()
+{
+    int n,m,p,i,j,ck=0,sq=0,pow=0;
+
+
+    scanf("%d %d",&n,&m);
+    p=m;
+
+    for(i=2; i*i<=m; i++)
+    {
+        if(p%i==0){
+
+            while(p%i==0){
+                pow++;
+                p/=i;
+                 //printf("p: %d\n",p);
+            }
+            printf("pow: %d i: %d\n",pow,i);
+
+            printf("return %d\n",power(n,pow,i));
+
+         }
+         pow=0;
+        }
+
+        printf("********p:%d\n",p);
+
+    if(p>1)
+        printf("return %d\n",power(n,m,1));
+
+
+    return 0;
+}
