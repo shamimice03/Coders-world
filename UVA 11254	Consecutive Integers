@@ -1,0 +1,38 @@
+#include<stdio.h>
+#include<math.h>
+#define LONG long long
+
+int main()
+{
+   LONG s,n,a,i,total=0,j,c,sum=0,sq,p,t=0,y=0;
+
+   while(scanf("%lld",&s) != EOF){
+
+        if(s==-1)
+        break;
+
+   p=0;
+   p=s*2;
+   sq=sqrt(p);
+
+  a=0;
+  total=0;
+  for(i=sq; i>1; i--){
+   t = (p+i-(i*i));
+   if(t%(2*i)==0)
+   {
+    c=0;
+    total=1;
+    c=t/(2*i);
+    y=c+(i-1);
+    break;
+   }
+  }
+  if(total==1)
+  printf("%lld = %lld + ... + %lld\n",s,c,y);
+  else
+    printf("%lld = %lld + ... + %lld\n",s,s,s);
+   }
+
+   return 0;
+}
